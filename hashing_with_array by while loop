@@ -1,0 +1,11 @@
+def hashing_with_array(num,array):
+    i = num
+    count = 0
+    j = 0
+    while j<len(array):
+        j+=1
+        count+= 1
+        count = i
+        print(f"num is {count},value is{i}")
+my_array= [2,3,4,3,2,5]
+hashing_with_array(2,my_array)
