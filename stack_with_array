@@ -1,0 +1,46 @@
+class stack_with_array:
+      def __init__(self,size,top):
+          self.size = size
+          self.top = top
+          self.stack = [None]*size
+      def _is_empty(self):
+          if (self.top == -1):
+              print("stack is empty")
+              return None
+      def _is_full(self):
+          if (self.top == self.size-1):
+              print(" stack is full")
+      def push(self,element):
+          if self._is_full():
+             print("stack has no space for push")
+          else :
+              self.top+= 1
+              self.stack[self.top] = element
+              
+              print(f"pushed:{element}")
+      def pop(self):
+          if (self.top ==-1):
+              print("stack is empty")
+          else:
+              removed_element = self.stack[self.top] 
+              self.stack[self.top] = None
+              self.top-= 1
+              print(f"poped element:{removed_element}")
+      def display(self):
+          if self._is_empty():
+             print("stack is empty")
+          else:
+               for i in range(self.top +1):
+                   print(self.stack[i],end = "")
+               print()
+
+
+my_stack = stack_with_array(8,-1)
+my_stack.display()
+my_stack.push(4)
+my_stack.push(7)
+my_stack.push(5)
+my_stack.push(3)
+my_stack.push(2)
+my_stack.pop()
+my_stack.display()
