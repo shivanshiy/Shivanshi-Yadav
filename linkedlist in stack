@@ -1,0 +1,51 @@
+class Node:
+      def __init__(self,data):
+           self.data = data
+           self.next = None
+class stack:
+      def __init__(self,top,size):
+          self.top = top
+          self.size = size
+      def _empty(self):
+          if(self.top == None):
+             print(" stack is empty")
+      def _full(self):
+          if(self.top == size):
+             print("stack has no space")
+      def _push(self,data):
+          new_Node = Node(data)
+          new_Node.next = self.top
+          self.top = new_Node
+          
+      def _pop(self):
+          temp = self.top
+        
+          self.top = self.top.next
+          
+          print(f"poped{temp.data}")
+      def _peek(self,position):
+          ptr = self.top
+          for i  in range(position - 1):
+              if ptr is None:
+                 ptr = ptr.next
+              else: 
+                   break
+              if ptr is not None:
+                 print(f"ptr{ptr.data}")
+      def display(self):
+          current = self.top
+            
+          while current is not None:
+              print(f"{current.data}")
+              current = current.next
+          print() 
+                       
+              
+
+my_stack = stack(None,6)
+my_stack._push(9)
+my_stack._push(5)
+my_stack._push(4)
+my_stack._push(3)
+my_stack._pop()
+my_stack.display()
