@@ -1,0 +1,16 @@
+def _deletion_element(arr,target):
+    target_index = -1
+    for i in range(len(arr)):
+        if arr[i] == target:
+           target_index = i
+           break
+        if target_index == -1:
+           print(f"error:element{target}")
+    for i in range(target_index,len(arr)-1):
+        arr[i] = arr[i+1]
+    arr.pop()
+
+my_arr = [10,20,30,40]
+print(f"array:{my_arr}")
+_deletion_element(my_arr,20)
+print(f"update:{my_arr}")
